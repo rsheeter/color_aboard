@@ -26,7 +26,7 @@ _FONT_SOURCES = (
         "https://github.com/aliftype/amiri/releases/download/0.114/Amiri-0.114.zip",
         (Path("Amiri-0.114/AmiriQuranColored.ttf"),),
         "ofl/amiriqurancolored",
-        maximum_color_args=("--bitmap_resolution", "72")
+        maximum_color_args=("--bitmap_resolution", "48")  # uh oh
     ),
     FontSource(
         "https://github.com/aliftype/aref-ruqaa/releases/download/v1.004/ArefRuqaa-1.004.zip",
