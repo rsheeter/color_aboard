@@ -49,7 +49,7 @@ _FONT_SOURCES = (
     FontSource(
         "git@github.com:Gue3bara/Blaka.git",
         (
-            FontFile(Path("fonts/BlakaInk-Regular.ttf"), Path("ofl/blakaink/BlakaInk-Regular.ttf")),
+            FontFile(Path("fonts/ink/ttf/BlakaInk-Regular.ttf"), Path("ofl/blakaink/BlakaInk-Regular.ttf")),
         ),
         git_dir="blaka_ink",
     ),
