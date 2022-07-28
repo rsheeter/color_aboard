@@ -24,13 +24,11 @@ class FontSource(NamedTuple):
     url: str
     fonts: Tuple[FontFile, ...]
     git_dir: Optional[str] = None
-    maximum_color_args: Tuple[str, ...] = ()
 
 _FONT_SOURCES = (
     FontSource(
         "https://github.com/aliftype/amiri/releases/download/0.114/Amiri-0.114.zip",
         (FontFile(Path("Amiri-0.114/AmiriQuranColored.ttf"), Path("ofl/amiriqurancolored/AmiriQuranColored-Regular.ttf")),),
-        maximum_color_args=("--bitmap_resolution", "48")  # uh oh
     ),
     FontSource(
         "https://github.com/aliftype/aref-ruqaa/releases/download/v1.004/ArefRuqaa-1.004.zip",
@@ -132,7 +130,7 @@ def main(_):
             converted_font = conversion_dir / "build" / font_file.name
 
             if not converted_font.is_file():
-                cmd = ("maximum_color", font_file, "--bitmaps", "--output_file", str(converted_font)) + font_source.maximum_color_args
+                cmd = ("maximum_color", font_file, "--output_file", str(converted_font))
                 print()
                 print("Maximizing", font, "in", conversion_dir, " ".join(str(c) for c in cmd))
                 subprocess.run(
